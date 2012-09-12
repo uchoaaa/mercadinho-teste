@@ -309,3 +309,99 @@ Migrating to AddClientIdToProduct (20120912221423)
   [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120912215107')[0m
   [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120912220438')[0m
   [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120912221131')[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2012-09-12 19:19:00) [GET]
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" [0m
+Rendering clients/index
+Completed in 35ms (View: 2, DB: 0) | 200 OK [http://localhost/clients]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:19:03) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering products/index
+
+ActionView::TemplateError (undefined method `clients' for #<Product:0x102ef58c8>) on line #8 of app/views/products/index.html.erb:
+5: 		<% @products.each do |product| %>
+6: 			<li><%= product.title %></li>
+7: 			<li><%= product.description %></li>
+8: 			<li><%= product.clients.size %></li>
+9: 		<% end %>
+10: 	</ul>
+11: <% else %>
+
+    app/views/products/index.html.erb:8
+    app/views/products/index.html.erb:5:in `each'
+    app/views/products/index.html.erb:5
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:19:16) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `size' for #<ActiveRecord::Associations::BelongsToAssociation:0x103059a98>) on line #8 of app/views/products/index.html.erb:
+5: 		<% @products.each do |product| %>
+6: 			<li><%= product.title %></li>
+7: 			<li><%= product.description %></li>
+8: 			<li><%= product.client.size %></li>
+9: 		<% end %>
+10: 	</ul>
+11: <% else %>
+
+    app/views/products/index.html.erb:8
+    app/views/products/index.html.erb:5:in `each'
+    app/views/products/index.html.erb:5
+
+Rendered rescues/_trace (111.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:19:23) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Completed in 15ms (View: 11, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:20:00) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:21:04) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:21:05) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2012-09-12 19:21:13) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering products/index
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 2) [0m
+Completed in 74ms (View: 69, DB: 1) | 200 OK [http://localhost/products]

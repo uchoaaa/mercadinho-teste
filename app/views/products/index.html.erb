@@ -1,3 +1,16 @@
 <h1>UHUU!</h1>
 
-<p>Agora tenho <%= @products.size %> produtos no banco!!</p>
+<% if @products.present? %>
+	<ul>
+		<% @products.each do |product| %>
+			<li>
+				<%= product.title %><br>
+				<%= product.description %> <br>
+				<%= product.client.name %>
+				</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Aaaah, não tenho produto!</p>
+<% end %>
+
