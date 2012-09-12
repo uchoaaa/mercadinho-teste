@@ -5,6 +5,13 @@
 	<ul>
 		<% @clients.each do |client| %>
 			<li><%= client.name %></li>
+			<ul>
+				<% client.products.each do |product| %>
+					<li>
+						<%= link_to product.title, product_path(product) %>
+					</li>
+				<% end %>
+			</ul>
 		<% end %>
 	</ul>
 <% else %>

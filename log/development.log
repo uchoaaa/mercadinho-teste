@@ -405,3 +405,58 @@ Rendering products/index
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
   [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 2) [0m
 Completed in 74ms (View: 69, DB: 1) | 200 OK [http://localhost/products]
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2012-09-12 19:21:37) [GET]
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" [0m
+Rendering clients/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/clients]
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2012-09-12 19:22:23) [GET]
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" [0m
+Rendering clients/index
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products".client_id = 1) [0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products".client_id = 2) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/clients]
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2012-09-12 19:22:55) [GET]
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" [0m
+Rendering clients/index
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products".client_id = 1) [0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM "products" WHERE ("products".client_id = 2) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/clients]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2012-09-12 19:23:12) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2012-09-12 19:23:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+
+ActionView::MissingTemplate (Missing template products/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2012-09-12 19:24:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering products/show
+Completed in 73ms (View: 68, DB: 0) | 200 OK [http://localhost/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2012-09-12 19:24:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering products/show
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/products/2]
