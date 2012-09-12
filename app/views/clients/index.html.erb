@@ -1,0 +1,12 @@
+<h1>Clients</h1>
+
+
+<% if @clients.present? %>
+	<ul>
+		<% @clients.each do |client| %>
+			<li><%= client.name %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Ops, ainda não tenho cliente!</p>
+<% end %>
