@@ -4,10 +4,12 @@
 	<ul>
 		<% @products.each do |product| %>
 			<li>
-				<%= product.title %><br>
+				<h2><%= product.title %></h2>
 				<%= product.description %> <br>
-				<%= product.client.name %>
-				</li>
+				R$ <%= product.price %> <br>
+				Cadastrado por: <%= product.seller.name %>
+				
+			</li>
 		<% end %>
 	</ul>
 <% else %>
