@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cliente: 
+  sold_at: 2012-09-13 11:53:20
+
+two:
+  cliente: 
+  sold_at: 2012-09-13 11:53:20
