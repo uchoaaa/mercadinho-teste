@@ -1,0 +1,12 @@
+.DS_Store
+.project
+.classpath
+.settings
+.svn/
+log/
+db/*.sqlite3
+db/*.rb
+target/
+App.java
+AppTest.java
+tmp/
